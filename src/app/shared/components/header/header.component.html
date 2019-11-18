@@ -1,0 +1,295 @@
+<header class="app-header navbar navbar-dark bg-dark">
+    <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+    <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto" type="button" data-toggle="sidebar-show">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    <a class="navbar-brand" href="#">
+        <i class="fa fa-ticket fa-2x nav-item" aria-hidden="true" href="#"></i>
+        <h3>My Ticket</h3>
+    </a>
+
+    <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item pr-4">
+            <input class="form-control form-control-sm" type="text" placeholder="Hamlet">
+        </li>
+        <li class="nav-item pr-2" routerLinkActive="router-link-active">
+            <a class="nav-link" [routerLink]="['resultado-busqueda']">
+                <span class="d-block text-center"><i class="fa fa-search fa-2x text-info"></i></span><small> Busqueda</small>
+            </a>
+        </li>
+        <li class="nav-item pr-2" routerLinkActive="active">
+            <a class="nav-link" routerLink="organization">
+                <span class="d-block text-center"><i class="fa fa-bullhorn fa-2x text-info"></i></span><small> Centro de organizacion </small>
+            </a>
+        </li>
+        <li class="nav-item pr-2" routerLinkActive="active">
+            <a class="nav-link" routerLink="help">
+                <span class="d-block text-center"><i class="fa fa-question-circle fa-2x text-primary"></i></span><small> Ayuda </small>
+            </a>
+        </li>
+        <li class="nav-item pr-2" routerLinkActive="router-link-active">
+            <a class="nav-link" [routerLink]="['ListaDeseos']">
+                <span class="d-block text-center"><i class="fa fa-heart fa-2x text-danger"></i></span><small> Lista de deseos </small>
+            </a>
+        </li>
+        <li class="nav-item pr-2" routerLinkActive="active">
+            <a class="nav-link" routerLink="account" data-toggle="modal" data-target="#IniciarSesion">
+                <span class="d-block text-center"><i class="fa fa-user-circle-o fa-2x text-secondary" ></i></span> <small> Mi cuenta </small>
+            </a>
+        </li>
+        <li class="nav-item pr-2" routerLinkActive="active">
+            <a class="nav-link" routerLink="language">
+                <span class="d-block text-center"><i class="fa fa-globe fa-2x text-primary"></i></span> <small> Idioma </small>
+            </a>
+        </li>
+    </ul>
+</header>
+
+
+<!--Ingresar usuario-->
+<div class="modal fade docs-example-modal-lg" id="IniciarSesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4 text-dark h5">
+                            <i class="fa fa-ticket fa-3x nav-item text-dark" aria-hidden="true" href="#"></i>
+                        </div>
+                        <div class="col-md-4 text-dark">
+                            <h1 class="modal-title text-dark" id="exampleModalCenterTitle">Iniciar Sesión</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body ">
+                <div class="container-fluid">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-sm-10 ">
+                            <div class="row m-lg-3">
+                                <div class="col-md-4 text-dark h5">
+                                    <span class=" text-center"><i class="fa fa-facebook-f fa-2x text-primary" ></i></span> Facebook
+                                </div>
+                                <div class="col-md-4 text-dark h5">
+                                    <span class=""><i class="fa fa-twitter fa-2x text-primary" ></i></span> Twitter
+                                </div>
+                                <div class="col-md-4 text-dark h5">
+                                    <img src="../../../../assets/img/google.png" alt=""> Google
+                                </div>
+                            </div>
+                            <div class="row">
+                                <input type="email" class="form-control form-control-lg m-lg-2" id="exampleFormControlInput1" placeholder="Correo Electronico">
+                            </div>
+                            <div class="row">
+                                <label for="inputPassword2" class="sr-only">Contraseña</label>
+                                <input type="password" class="form-control form-control-lg m-lg-2" id="inputPassword2" placeholder="Contraseña">
+                            </div>
+                            <div class="row d-flex justify-content-center m-lg-2">
+                                <h4 class="modal-title text-dark m-lg-2"><ins>¿Has olvidado tu contraseña? </ins></h4>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <button type="button" class="btn btn-pill btn-outline-primary btn-lg d-flex justify-content-center m-lg-2">Registrame</button>
+                            </div>
+                            <div class="row d-flex justify-content-center m-lg-2">
+                                <h5 class="modal-title text-dark m-lg-1">¿No tienes una cuenta aun? <strong class="h4" data-toggle="modal" data-target="#exampleModalCenter" data-dismiss="modal" style="cursor:pointer;">Registrarme</strong></h5>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+<!--selecionar opcion-->
+<div class="modal fade docs-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4 text-dark h5">
+                            <i class="fa fa-ticket fa-3x nav-item text-dark" aria-hidden="true" href="#"></i>
+                        </div>
+                        <div class="col-md-4 text-dark">
+                            <h1 class="modal-title text-dark" id="exampleModalCenterTitle">Crear Cuenta</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body ">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 ">
+                            <div class="row">
+                                <div class="col-md-6 text-dark h5 d-flex justify-content-end">
+                                    <button type="button" class="btn btn-pill btn-outline-primary btn-lg m-lg-2" data-toggle="modal" data-target="#RegistrarUsuario" data-dismiss="modal">
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                            <div class="col-md-4">
+                                                                    <i class="fa fa-eye fa-2x text-dark"></i>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                    <b class="h3 ">Espectador</b>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                        </button>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="button" class="btn btn-pill btn-outline-primary btn-lg m-lg-2" data-toggle="modal" data-target="#RegistrarUsuario" data-dismiss="modal">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                        <div class="col-md-4">
+                                                                <i class="fa fa-briefcase fa-2x text-dark"></i>
+                                                        </div>
+                                                        <div class="col-md-8">
+                                                                <b class="h3 d-block text-center">Organizador</b>
+                                                        </div>
+                                                </div>
+                                            </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Registrar Usuario-->
+<div class="modal fade docs-example-modal-lg" id="RegistrarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4 text-dark h5">
+                            <i class="fa fa-ticket fa-3x nav-item text-dark" aria-hidden="true" href="#"></i>
+                        </div>
+                        <div class="col-md-4 text-dark">
+                            <h1 class="modal-title text-dark" id="exampleModalCenterTitle">Crear Cuenta</h1>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-body ">
+                <div class="container-fluid">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-sm-10 ">
+                            <div class="row">
+                                <div class="col-md-4 text-dark h5">
+                                    <span class=" text-center"><i class="fa fa-facebook-f fa-2x text-primary" ></i></span> Facebook
+                                </div>
+                                <div class="col-md-4 text-dark h5">
+                                    <span class=""><i class="fa fa-twitter fa-2x text-primary" ></i></span> Twitter
+                                </div>
+                                <div class="col-md-4 text-dark h5">
+                                    <img src="../../../../assets/img/google.png" alt=""> Google
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h2 class="modal-title text-dark m-lg-1">Ingresa tus datos</h2>
+                            </div>
+                            <div class="row">
+                                <input class="form-control form-control-lg m-lg-1" type="text" placeholder="Nombre">
+                            </div>
+                            <div class="row">
+                                <input class="form-control form-control-lg m-lg-1" type="text" placeholder="Apellidos">
+                            </div>
+                            <div class="row">
+                                <input type="email" class="form-control form-control-lg m-lg-1" id="exampleFormControlInput1" placeholder="correo">
+                            </div>
+                            <div class="row">
+                                <label for="inputPassword2" class="sr-only">Contraseña</label>
+                                <input type="password" class="form-control form-control-lg m-lg-1" id="inputPassword2" placeholder="Contraseña">
+                            </div>
+                            <div class="row">
+                                <label for="inputPassword2" class="sr-only">Confirmar Contraseña</label>
+                                <input type="password" class="form-control form-control-lg m-lg-1" id="inputPassword2" placeholder="Confirmar Contraseña">
+                            </div>
+                            <div class="row">
+                                <h3 class="modal-title text-dark m-lg-2">¿Deseas recibir correos? </h3>
+                            </div>
+                            <div class="row">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label text-dark m-lg-1 h5" for="customCheck1">Sí, <b>mantenme informado</b> sobre noticias, ofertas y novedades</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h5 class="modal-title text-dark m-lg-1">Al hacer clic en "Registrarme", aceptas nuestras <b>Condiciones</b>, la <b>Política de datos</b> y <b>Política de cookies</b>.</h5>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <button type="button" class="btn btn-pill btn-outline-primary btn-lg d-flex justify-content-center m-lg-2" data-toggle="modal" data-target="#exampleModalExito" data-dismiss="modal">Registrame</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--salir-->
+<div class="modal fade docs-example-modal-lg" id="exampleModalExito" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-2 text-dark">
+                            <i class="fa fa-ticket fa-3x nav-item text-dark" aria-hidden="true" href="#"></i>
+                        </div>
+                        <div class="col-md-6 text-dark d-flex justify-content-end">
+                            <h2 class="modal-title text-dark" id="exampleModalCenterTitle"> ¡Te has registrado</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-dark d-flex justify-content-center">
+                            <h2 class="modal-title text-dark" id="exampleModalCenterTitle">exitosamente!</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-body ">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 d-flex justify-content-center m-lg-4">
+                            <i class="fa fa-handshake-o fa-5x text-dark" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 d-flex justify-content-center text-dark">
+                            <h4>Por favor <b>revisa</b> tu correo electrónico para <b>validar tu registro</b> y así poder </h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 d-flex justify-content-center text-dark">
+                            <h4>acceder a todas los <b>beneficios</b> de <b>MyEntry</b></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
