@@ -1,0 +1,202 @@
+<p style="visibility: hidden">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor totam praesentium vitae unde ab necessitatibus doloribus repellendus autem libero cum at nam ex nihil accusantium provident, illum saepe possimus dolore!</p>
+
+<div class="row d-flex justify-content-center">
+    <div class="col-10">
+        <div class="card bg-dark">
+            <div class="card-heder">
+                <h1 class=" d-flex justify-content-center">Registrar Evento</h1>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label>Titulo</label>
+                                <input [(ngModel)]="evento.title" [(ngModel)]="ticket.title" [(ngModel)]="ticket1.title" [(ngModel)]="ticket2.title" name="title" type="text" class="form-control" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1" #description>Descripción</label>
+                                <textarea [(ngModel)]="evento.description" name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escribe un párrafo corto pero potente que describa tu evento."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Organizador</label>
+                                <input [(ngModel)]="evento.adicional" name="adicional" type="text" class="form-control" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputState">Categoria</label>
+                                <select [(ngModel)]="evento.categoria" name="categoria" id="inputState" class="form-control">
+                                    <option selected >Elige una categoría</option>
+                                    <option value="cursos-talleres">Arte y cultura</option>
+                                    <option value="art-culture">Arte y cultura</option>
+                                    <option value="community-service">Ayuda social</option>
+                                    <option value="food-drinks">Comidas y bebidas</option>
+                                    <option value="concerts">Conciertos</option>
+                                    <option value="sports">Cursos y talleres</option>
+                                    <option value="entertainment">Entretenimiento</option>
+                                    <option value="party">Fiestas</option>
+                                    <option value="kids">Niños</option>
+                                    <option value="seminarios-conferencias">Seminarios y conferencias</option>
+                                    <option value="stand-up">Stand up</option>
+                                    <option value="theater">Teatro</option>
+                                    <option value="tech">Tecnología</option>
+                                    <option value="trip-adventure">Viaje y aventura</option>
+                                </select>
+                            </div>
+                            <div class="form-group d-flex justify-content-center">
+                                <button (click)="uploadEvento()" class="btn btn-outline-primary btn-lg  ">Registrar</button>
+                            </div>
+
+                        </div>
+                        <div class="col-6">
+                            <div class="form-row">
+                                <div class="form-group col-md-5">
+                                    <label for="inputEmail4">Fecha inicio Evento</label>
+                                    <input [(ngModel)]="evento.fechaInicio" name="fechaInicio" [matDatepicker]="myDatepicker">
+                                    <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+                                    <mat-datepicker #myDatepicker></mat-datepicker>
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <label for="inputEmail4">Fecha Finaliza</label>
+                                    <input [(ngModel)]="evento.fechaFinal" name="fechaFinal" [matDatepicker]="myDatepicker1">
+                                    <mat-datepicker-toggle [for]="myDatepicker1"></mat-datepicker-toggle>
+                                    <mat-datepicker #myDatepicker1></mat-datepicker>
+                                </div>
+                            </div>
+                            <label>Image * (selecionar)</label>
+                            <div class="form-row border border-secondary rounded-top">
+                                <input type="file" class="d-none" (change)="onEventoSelected($event)" #photoInput>
+                                <img [src]="eventoSelected || '../../../../assets/img/foto-evento.jpg'" class="img-fluid" alt="no image" (click)="photoInput.click()">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row d-flex justify-content-center">
+    <div class="col-10">
+        <div class="card bg-dark">
+            <div class="card-heder">
+                <h1 class=" d-flex justify-content-center">Registrar ticket</h1>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-7 ">
+                            <div class="row ">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>nombre de la Entrada*</label>
+                                        <input [(ngModel)]="ticket.nombreEntrada" name="nombreEntrada" type="text" class="form-control" placeholder="Ej. Gratis, VIP, Preventa">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label>Cantidad</label>
+                                        <input [(ngModel)]="ticket.cantidad" name="cantidad" type="text" class="form-control" placeholder="0">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label>Precio</label>
+                                        <input [(ngModel)]="ticket.precio" name="precio" type="text" class="form-control" placeholder="0.00">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center">
+                                <button (click)="uploadTicket()" class="btn btn-outline-primary btn-lg  ">Registrar</button>
+                            </div>
+                        </div>
+                        <div class="col-5">
+                            <label>Image * (selecionar)</label>
+                            <div class="form-row border border-secondary rounded-top">
+                                <input type="file" class="d-none" (change)="onTicketSelected($event)" #ticketInput>
+                                <img [src]="ticketSelected || '../../../../assets/img/foto-ticket.png'" class="img-fluid" alt="no image" (click)="ticketInput.click()">
+                            </div>
+                        </div>
+                    </div>
+                    <br/><br/>
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>nombre de la Entrada*</label>
+                                        <input [(ngModel)]="ticket1.nombreEntrada" name="nombreEntrada1" type="text" class="form-control" placeholder="Ej. Gratis, VIP, Preventa">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label>Cantidad</label>
+                                        <input [(ngModel)]="ticket1.cantidad" name="cantidad1" type="text" class="form-control" placeholder="0">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label>Precio</label>
+                                        <input [(ngModel)]="ticket1.precio" name="precio1" type="text" class="form-control" placeholder="0.00">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center">
+                                <button (click)="uploadTicket1()" class="btn btn-outline-primary btn-lg  ">Registrar</button>
+                            </div>
+                        </div>
+                        <div class="col-5">
+
+                            <label>Image * (selecionar)</label>
+                            <div class="form-row border border-secondary rounded-top">
+
+                                <input type="file" class="d-none" (change)="onTicketSelected1($event)" #ticketInput1>
+                                <img [src]="ticketSelected1 || '../../../../assets/img/foto-ticket.png'" class="img-fluid" alt="no image" (click)="ticketInput1.click()">
+                            </div>
+                        </div>
+                    </div>
+                    <br/><br/>
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>nombre de la Entrada*</label>
+                                        <input [(ngModel)]="ticket2.nombreEntrada" name="nombreEntrada2" type="text" class="form-control" placeholder="Ej. Gratis, VIP, Preventa">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label>Cantidad</label>
+                                        <input [(ngModel)]="ticket2.cantidad" name="cantidad2" type="text" class="form-control" placeholder="0">
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="form-group">
+                                        <label>Precio</label>
+                                        <input [(ngModel)]="ticket2.precio" name="precio2" type="text" class="form-control" placeholder="0.00">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group d-flex justify-content-center">
+                                <button (click)="uploadTicket2()" class="btn btn-outline-primary btn-lg  ">Registrar</button>
+                            </div>
+                        </div>
+                        <div class="col-5">
+
+                            <label>Image * (selecionar)</label>
+                            <div class="form-row border border-secondary rounded-top">
+
+                                <input type="file" class="d-none" (change)="onTicketSelected2($event)" #ticketInput2>
+                                <img [src]="ticketSelected2 || '../../../../assets/img/foto-ticket.png'" class="img-fluid" alt="no image" (click)="ticketInput2.click()">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
